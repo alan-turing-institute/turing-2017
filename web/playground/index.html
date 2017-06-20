@@ -55,7 +55,7 @@ compost.charts.lines([china,usa])
     
   <div class="row">
     <div class="col-sm-12 col-md-8">
-      <h1>The Alan Turing Institute<br/><em>Data playground</em></h1>
+      <h1>The Alan Turing Institute<br/><em>Data playgrounds</em></h1>
       <p>This is a minimal page where you can explore any of the datasets available
         in The Gamma or uploaded to <a href="https://gallery.thegamma.net/">The Gamma gallery</a>.
         For example, start by typing <code>olympics</code> to explore Olympic medal winners or
@@ -113,7 +113,8 @@ compost.charts.lines([china,usa])
           "shared": g.providers.rest("https://gallery-csv-service.azurewebsites.net/providers/listing"),
           "expenditure": g.providers.rest("https://govuk-expenditure.azurewebsites.net/expenditure"),
           "videos": g.providers.pivot("https://gallery-csv-service.azurewebsites.net/providers/csv/2017-05-12/file_8.csv"),
-          "views": g.providers.pivot("https://gallery-csv-service.azurewebsites.net/providers/csv/2017-05-29/file_3.csv")
+          "views": g.providers.pivot("https://gallery-csv-service.azurewebsites.net/providers/csv/2017-05-29/file_3.csv"),
+          "web": g.providers.rest("http://127.0.0.1:8897/providers/data")
         });
           
       // Create context which is used to create editor & run code

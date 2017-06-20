@@ -37,11 +37,13 @@ function loadTheGamma() {
       var services = "https://thegamma-services.azurewebsites.net/";
       var providers =
         g.providers.createProviders({
-          "worldbank": g.providers.rest(services + "worldbank"),
+          "worldbank222": g.providers.rest(services + "worldbank"),
           "libraries": g.providers.library(theGammaRoot + "/libraries.json"),
           "shared": g.providers.rest("https://gallery-csv-service.azurewebsites.net/providers/listing", null, true),
           "olympics": g.providers.pivot(services + "pdata/olympics"),
-          "expenditure": g.providers.rest("https://thegamma-govuk-expenditure-service.azurewebsites.net/") 
+          "expenditure": g.providers.rest("https://thegamma-govuk-expenditure-service.azurewebsites.net/"),
+          "web": g.providers.rest("http://127.0.0.1:8897/providers/data")
+          // "web2": g.providers.rest("https://gallery-csv-service.azurewebsites.net/providers/data")
           //"expenditure": g.providers.rest("http://127.0.0.1:10039/expenditure") 
         });
 
