@@ -11,7 +11,7 @@ body {
   overflow:hidden;
   z-index:-1;
 }
-#trig1:after{
+#trig1blue:after{
   height:50vw;
   width:100vw;
   position:absolute;
@@ -25,12 +25,55 @@ body {
   background:#3D46FF;
   z-index:-1;
 }
+#trig1orange:after{
+  height:50vw;
+  width:100vw;
+  position:absolute;
+  left:17vw;
+  top:-42vw;
+  z-ms-transform:skew(20deg,0deg);
+  z-webkit-transform:skew(20deg,0deg);
+  transform:rotate(10deg) skew(-40deg,0deg);
+  content:'';
+  display:block;
+  background:#ff7700;
+  z-index:-1;
+}
+#trig1green:after{
+  height:50vw;
+  width:100vw;
+  position:absolute;
+  left:17vw;
+  top:-42vw;
+  z-ms-transform:skew(20deg,0deg);
+  z-webkit-transform:skew(20deg,0deg);
+  transform:rotate(10deg) skew(-40deg,0deg);
+  content:'';
+  display:block;
+  background:#38B738;
+  z-index:-1;
+}
+
+footer {
+  color:#a0a0a0;
+  background:#e8e8e8;
+  padding:30px 0px 30px 0px;
+}
+footer h4 {
+  font-family:Roboto;
+  font-size:13pt;
+  margin:0px 0px 10px 0px;
+}
+footer p {
+  font-family:Roboto;
+  font-size:10pt;
+  margin:0px 0px 20px 0px;
+}
 
 /* Formatting for the article text, headings and standard docment elements */
 article {
   font-family:Roboto;
-  padding:5vw 0px 100px 0px;
-  padding-bottom:300px;
+  padding:5vw 0px 80px 0px;
 }
 article h1 {
   font-weight:700;
@@ -66,6 +109,10 @@ article p {
   line-height:1.7em;
   margin:0px 0px 25px 0px;
 }
+article p.small {
+  line-height:1.8em;
+  font-size:11pt;
+}
 article ul {
   margin:0px 0px 25px 0px;
 }
@@ -73,7 +120,7 @@ article li {
   font-weight:400;
   font-size:13pt;
   line-height:1.7em;
-  margin:0px;
+  margin:0px 0px 5px 0px;
 }
 article select {
   font-weight:400;
@@ -81,7 +128,6 @@ article select {
 }
 article p small {
   font-size:11pt;
-  line-height:1.2em;
 }
 article code {
   background:transparent;
@@ -89,23 +135,54 @@ article code {
 
 article a {
   text-decoration:none;
-  color:#1A6EBC;
+  color:#E4003C !important;
 }
 article a:hover, article a:active {
-  color:#2191F2;
+  color:#FF5969 !important;
 }
-
+article h2 a, article h2 a:hover {
+  color:black;
+  text-decoration:none;
+}
+article .thegamma-inline {
+  color:inherit;
+  text-decoration:none;
+  border-bottom:1px dashed;
+}
+article .thegamma-inline:hover, article .thegamma-inline:active {
+  color:inherit;
+  text-decoration:none;
+  border-bottom:1px dashed;
+}
 article .thegamma-edit a {
   font-size:11pt;
   text-decoration:none;
-  color:#8a8a8a;
+  color:#8a8a8a !important;
 }
 article .thegamma-edit a:hover, article .thegamma-edit a:active {
-  color:#bababa;
+  color:#bababa !important;
 }
 article .toppad {
-  padding-top:30px;
+  padding-top:40px;
 }
+article .botpad {
+  padding-bottom:40px;
+}
+.article-info-sm {
+  padding:0px;
+  margin:0px 0px 10px 0px;
+}
+.article-info-sm i {
+  font-size:14pt;
+  margin-left:5px;
+}
+.article-info-sm a {
+  color:#1A6EBC !important;
+}
+.article-info-sm a:hover, .article-info-sm a:active {
+  color:#2191F2 !important;
+}
+
 
 /* Edit source code link and scrollable table outputs */
 .thegamma-edit a i {
@@ -138,24 +215,56 @@ article .toppad {
   background-color:#dddddd;
 }
 
-/* Override default thegamma.css styling (better looking dialog) */
-.thegamma-sizer {
-  max-width:1000px;
+/* Game elements for the Turing 2017 report */
+.game-info {
+  background:#f0f0f0;
+  margin:0px 50px 10px 50px;
+  padding:10px 20px 10px 50px;
 }
-.thegamma-dialog-window {
-  max-width:1000px;
-  margin-top:5% !important;
-  height:80% !important;
+.game-info p {
+  margin:10px 0px 10px 0px;
+  line-height:1.5em;
 }
-.thegamma .errors {
-  position:absolute;
-  bottom:70px;
-  width:auto !important;
-  left:10px;
-  right:10px;
+.game-info i {
+  margin-left:-28px;
+}
+.game-info a {
+  text-decoration:none;
 }
 
-/* May */
-article a .source {
-  font-size:10pt;
+.game-status {
+  display:none;
+  position:fixed;
+  bottom:0px;
+  background:#f0f0f0;
+  width:300px;
+  right:0px;
+  z-index:100;
+  font-family:Roboto;
+  font-weight:700;
+  font-size:13pt;  
+  border-top:solid 4px white;
+  padding:10px;
+}
+.game-status table {
+  margin-bottom:20px;
+}
+.game-status td {
+  padding-right:30px;
+}
+.game-status a {
+  text-decoration:none;
+  color:#E4003C !important;
+}
+.game-status a:hover, .game-status a:active {
+  color:#FF5969 !important;
+}
+#game-details {
+  overflow:hidden;
+  max-height:0px;
+  -webkit-transition: all 0.5s; 
+  -moz-transition: all 0.5s; 
+  -ms-transition: all 0.5s; 
+  -o-transition: all 0.5s; 
+  transition: all 0.5s;    
 }

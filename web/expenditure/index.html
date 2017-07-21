@@ -1,0 +1,455 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+  <meta name=viewport content="width=device-width, initial-scale=1">
+  <title>Accounting for democracy | The Alan Turing Institute</title>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link href="https://thegamma.net/lib/thegamma/thegamma.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata|Roboto:300,400,500,700,900" rel="stylesheet">
+  <link href="/lib/custom.css" rel="stylesheet">
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon-big.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/img/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/img/favicon-big.png">
+  <meta name="msapplication-TileColor" content="#3D46FF">
+  <meta name="msapplication-TileImage" content="/img/favicon-big.png">
+  <meta name="theme-color" content="#00202D">    
+  
+  <meta name="description" content="Can you guess how the UK government spends money on public services? 
+    You can find the answers in this interactive article, but we let you go even further and 
+    explore the UK government spending data on your own." />
+  <meta name="keywords" content="government, spending, turing institute, thegamma, data journalism, data science" />  
+  <meta name="author" content="May Yong and Tomas Petricek" />
+  <meta name="copyright" content="Tha Alan Turing Institute" />
+  
+  <meta property="og:title" content="Accounting for democracy" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://gamma.turing.ac.uk/expenditure/" />
+  <meta property="og:image" content="http://thegamma-turing-web.azurewebsites.net/expenditure/card.png" />
+  <meta property="og:description" content="Can you guess how the UK government spends money on public services? 
+    You can find the answers in this interactive article, but we let you go even further and 
+    explore the UK government spending data on your own." />
+  
+  <meta name="twitter:card" content="summary_large_image">  
+  <meta name="twitter:site" content="@thegamma_net">
+  <meta name="twitter:creator" content="@thegamma_net">  
+  <meta name="twitter:title" content="Accounting for democracy" />
+  <meta name="twitter:image" content="http://thegamma-turing-web.azurewebsites.net/expenditure/card.png" />
+  <meta name="twitter:description" content="Can you guess how the UK government spends money on public services? 
+    You can find the answers in this interactive article, but we let you go even further and 
+    explore the UK government spending data on your own." />
+    
+  <script type="application/ld+json">
+  {
+  	"@context": "http:\/\/schema.org",
+  	"@type": "Article",
+  	"name": "Accounting for democracy",
+    "headline": "Can you guess how the UK government spends money on public services?",
+  	"description": "You can find the answers in this interactive article, but we let you go even further and explore the UK government spending data on your own.",
+  	"url": "http://gamma.turing.ac.uk/expenditure/",
+  	"author": [{
+  		"@type": "Person",
+  		"name": "May Yong"
+  	}, {
+  		"@type": "Person",
+  		"name": "Tomas Petricek",
+  		"url": "http://tomasp.net",
+  		"sameAs": ["http://twitter.com/tomaspetricek"]
+  	}],
+  	"creator": ["Tomas Petricek"],
+  	"dateCreated": "2017-06-16T13:27:17.4779884+01:00",
+  	"datePublished": "2017-06-16T13:27:17.4779884+01:00",
+    "dateModified": "2017-06-16T13:27:17.4779884+01:00",
+    "mainEntityOfPage": "http://gamma.turing.ac.uk/expenditure/",
+  	"image": "http://thegamma-turing-web.azurewebsites.net/expenditure/card.png",
+  	"thumbnailUrl": "http://thegamma-turing-web.azurewebsites.net/expenditure/card.png",
+  	"keywords": ["government", "spending", "turing institute", "thegamma", "data journalism", "data science"],
+  	"inLanguage": "en-us",
+  	"publisher": {
+  		"@type": "Organization",
+  		"name": "The Alan Turing Institute",
+  		"url": "http://turing.ac.uk",
+      "logo": "http://thegamma-turing-web.azurewebsites.net/img/turing.jpg"
+  	}
+  }  
+  </script>    
+</head>
+<body>
+  <div id="trig"><div id="trig1blue"></div></div>
+
+  <article class="container">
+    <div class="row">
+      <div class="col-sm-10 col-lg-8">
+        <h1>The Alan Turing Institute<br/><em>Accounting for democracy</em></h1>
+        <p class="article-info-sm">
+          <a target="_blank" href="https://twitter.com/intent/tweet?url=http%3a%2f%2fgamma.turing.ac.uk&amp;text=Accounting+for+democracy+-+Interactive+%23dataviz+using+%40thegamma_net+by+%40turinginst+%23ddj">
+            <i class="fa fa-twitter-square"></i></a>
+          <a target="_blank" href="https://www.facebook.com/sharer.php?u=http%3a%2f%2fgamma.turing.ac.uk">
+            <i class="fa fa-facebook-official"></i></a>
+          <a href="mailto:?subject=Accounting%20for%20democracy%20%7c%20The%20Alan%20Turing%20Institute&body=See%3a%20http%3a%2f%2fgamma.turing.ac.uk">
+            <i class="fa fa-envelope"></i></a>
+          <a href="http://www.reddit.com/submit?url=http%3a%2f%2fgamma.turing.ac.uk&title=Accounting+for+democracy+%7c+The+Alan+Turing+Institute">
+            <i class="fa fa-reddit-square"></i></a>
+          <a target="_blank" href="https://news.ycombinator.com/submitlink?u=https%3A%2F%2Fgamma.turing.ac.uk&t=Accounting%20for%20democracy%20-%20The%20Alan%20Turing%20Institute">
+            <i class="fa fa-hacker-news"></i></a>
+        </p>
+        <p>
+        Our goal is to promote the ability to examine data, to learn to question the legitimacy of its source, and appreciate the context in which numbers are presented. We have chosen the UK Government public expenditure data for demonstration.
+        </p>
+        <p>Public expenditure is <a href="http://lexicon.ft.com/Term?term=public-spending">defined by the Financial Times</a>
+          as <i>money spent by the Government on public services and other state-controlled operations, projects and investments.</i>
+        If public expenditure data is easily accessible, we will understand how our money is spent, and question if it was used wisely. In order for the Government to ensure there is good value for money for the taxpayer, there should be maximal transparency of spending purposes.
+        Citizens and organizations with good quality, well presented public expenditure information can ensure that services receiving public money are held fully to account.
+        To begin with, we should be able to rapidly see what is available and then visualize what interests us. When we are able to place sections of public spending in context, we gain an understanding of the entire picture.
+        </p>
+        <p>The UK data in this demo has been sourced from the <a href="https://www.gov.uk/government/statistics/public-expenditure-statistical-analyses-2016">Public Expenditure Statistical Analyses (PESA) report</a>.
+          For more information, you can refer to the <a href="https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/538793/pesa_2016_web.pdf">full document (PDF)</a>.</p>
+      </div>
+    </div>
+
+    <!-- Services / Subservices -->
+    <div class="row">
+      <div class="col-sm-12">
+        <h2><span>Understanding the structure of the expenditure</span></h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="toppad col-md-5">
+          <p>Expenditure types can be classified by the purpose of which funds are used.
+            The <a href="https://unstats.un.org/unsd/cr/registry/regcst.asp?Cl=4">Classification of the Functions of Government</a>
+            document published by the United Nations provide a common structure that is used in reports produced by all UN members.
+          </p>
+          <p>Expenditure data here consists of ten services, which are further divided into sub-services.
+            To explore the sub-services, use the dropdown to select a service and see the subservices it consists of.
+          </p>
+          <div class="form-group" style="margin:30px 0px 0px 0px">
+            <label for="listing-options-service" class="control-label">Filter sub-services by service</label>
+            <div><select class="form-control" style="max-width:300px" id="listing-options-service"></select></div>
+          </div>
+      </div>
+      <div class="toppad col-md-7">
+        <div class="thegamma thegamma-table-out" id="listing"></div>
+      </div>
+    </div>
+
+    <!-- Visualizations -->
+    <div class="row">
+      <div class="col-sm-12">
+        <h2><span>Exploring and visualizing expenditure</span></h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-10 col-lg-8">
+        <p>As we saw in the previous section, the expenditure in each
+          service of the government consists of several sub-services.
+          To better understand the government expenditure, we look at
+          some of the services in detail. First, a large portion
+          of government expenditure is spent on "social protection", but
+          how is the money distributed between different sub-services?
+          Second, how much of the overall "education" expenditure is spent on
+          primary, secondary and tertiary education?</p>
+
+        <p>This report is created using <a href="https://thegamma.net/">The Gamma</a>,
+          which makes data visualizations more transparent and so it allows you
+          to easily modify the visualizations and explore other services. To get
+          started, just click "open source code" and change the service you want to see!
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="left toppad col-sm-6">
+        <div class="thegamma" id="socialProtection"></div>
+      </div>
+      <div class="right toppad botpad col-sm-6">
+        <div class="thegamma" id="education"></div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-10 col-lg-8">
+        <p>One of the interesting trends in the government expenditure has been the
+          growing investment into a service called "economic affairs". According to
+          <a href="http://ec.europa.eu/eurostat/statistics-explained/index.php/Government_expenditure_on_economic_affairs">Eurostat statistical analysis</a>,
+          this includes capital injections into banks (for example in Greece).
+          Expenditure on agriculture and fisheries falls within the EU competency and hence
+          is low for member states. This part of government expenditure has been rising
+          since 2012, but we can get better insight if we look at the individual
+          sub-services.
+          </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12 botpad">
+        <div class="thegamma" id="transport"></div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-10 col-lg-8">
+        <p>The data used in the above visualizations come from Chapter 5
+          "Public sector expenditure by function, sub-function and economic category"
+          of the <a href="https://www.gov.uk/government/statistics/public-expenditure-statistical-analyses-2016">PESA 2016</a>:
+        </p>
+        <p class="small">
+          <small>Data on education: <a href="https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/539471/PESA_2016_Chapter_5_tables.xlsx">
+            Chapter 5 Table 5.2 (XLSX)</a><br>
+          Data on economic affairs: <a href="https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/539471/PESA_2016_Chapter_5_tables.xlsx">
+            Chapter 5 Table 5.4 (XLSX)</a><br>
+          Data on social protection: <a href="https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/539471/PESA_2016_Chapter_5_tables.xlsx">
+            Chapter 5 Table 5.2 (XLSX)</a></small>
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <h2><span>Guessing the expenditure trends</span></h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-10 col-lg-8">
+        <p>Do you know how is the government expenditure distributed among the
+          different government services? Can you guess how spending changes following
+          pledges made by the government?</p>
+        <p>Rather than creating a chart showing the answer, we created a number of
+          interactive visualizations inspired by
+          <a href="https://www.nytimes.com/interactive/2017/01/15/us/politics/you-draw-obama-legacy.html">New
+          York Times "You Draw It" series</a> where you have to make a guess
+          before looking at the actual data. As in the previous sections,
+          you can click "open source code" to see the raw data and even
+          create your own challenges.
+          </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="left col-sm-4">
+        <h3><span>Expenditure breakdown</span></h3>
+        <p>First, let's start with the overview of an entire public expenditure.
+          Following the <a href="https://unstats.un.org/unsd/cr/registry/regcst.asp?Cl=4">Classification
+          of the Functions of Government</a>, we split the overall expenditure into
+          ten services. Can you guess how much we spent (as a percentage of GDP) on the
+          top six UK public services?</p>
+
+        <p>Are you curious about the remaining four services? Click "open source code" and
+          replace <code>take(6)</code> with <code>take(10)</code> in the script.</p>
+        <p class="small"><small>Data source: <a href="https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/539470/PESA_2016_Chapter_4_tables.xlsx">
+          PESA 2016 Chapter 4 Table 4.4 (XLSX)</a></small></p>
+      </div>
+      <div class="right toppad col-sm-8">
+        <div class="thegamma" id="grossDomesticProduct"></div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="left col-sm-4">
+        <h3><span>Greenest government ever</span></h3>
+        <p>In 2010, the Prime Minister David Cameron commited his government to be <a href="https://www.theguardian.com/environment/2010/may/14/cameron-wants-greenest-government-ever">the greenest government ever</a>.
+          Can you guess the spending trend on Environment Protection services over five years following this announcement?</p>
+        <p>Are you curious about changes to other services? Click "open source code" and replace
+          <code>'Environment protection'</code> on the second line with, for example, <code>Defence</code>.
+        <p class="small"><small>Data source: <a href="https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/539470/PESA_2016_Chapter_4_tables.xlsx">
+          PESA 2016 Chapter 4 Table 4.2</a></small></p>
+      </div>
+      <div class="right toppad col-sm-8">
+        <div class="thegamma" id="greenGovernment"></div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="left col-sm-4">
+        <h3><span>£600m Extra for science</span></h3>
+        <p>In 2012, the Chancellor George Osborne <a href="https://www.theguardian.com/science/2012/dec/05/george-osborne-science-stimulate-growth">pledged extra £600m over three years to the science sector</a>, believing that science and technology are key to economic growth.</p>
+        <p>Can you guess the trend on capital investment on the Science and Technology sector in the years following his pledge?</p>
+        <p class="small"><small>Data source: <a href="https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/539471/PESA_2016_Chapter_5_tables.xlsx">
+          PESA 2016 Chapter 5 Table 5.4</a></small></p>
+      </div>
+      <div class="right toppad col-sm-8">
+        <div class="thegamma" id="scienceAndTech"></div>
+      </div>
+    </div>
+
+</article>
+<footer>
+  <div class="container">
+    <div calss="row">
+      <div class="col-sm-5">
+        <h4>About the project</h4>
+        <p>
+          This page has been created by Tomas Petricek, Thomas Knowles and May Yong using <a href="https://thegamma.net/">The Gamma</a>,
+          an innovative open-source visualization tools that lets you create transparent data-driven visualizations.
+        </p>
+        <p>
+          To find out more, check out <a href="https://thegamma.net/">The Gamma homepage</a> and source on 
+          <a href="https://github.com/the-gamma">GitHub</a>. For updates, follow
+          <a href="https://twitter.com/thegamma_net">@thegamma_net</a> and <a href="https://twitter.com/tomaspetricek">@tomaspetricek</a>.
+          Send your comments to Tomas at <a href="mailto:tomas@tomasp.net">tomas@tomasp.net</a>.
+        </p>
+      </div>
+      <div class="col-sm-4">
+        <h4>Privacy policy</h4>
+        <p>For further research purposes, this page collects anonymous usage data about the choices made in the interactive 
+          visualizations and changes made to source code of snippets.</p>
+        <p>In addition, we are using
+          Google Analytics, which collects information about page views and uses tracking cookies.</p>
+      </div>
+      <div class="col-sm-3">
+        <p style="text-align:center;padding-top:40px">
+          <img src="../img/turing.png" style="width:200px;opacity:0.2"/>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Source code for embedded The Gamma visualizations -->
+<script type="text/thegamma" id="listing-code">let data =
+ shared.'by date'.'May 2017'.'COFOG Structure'
+  .'filter data'.'Service is'.[service:Education].then
+  .'drop columns'.'drop Service'.then
+  .'get the data'
+
+table.create(data).set(emptyText="No records match the selected criteria")
+</script>
+
+<script type="text/thegamma" id="grossDomesticProduct-code">let data =
+  expenditure
+    .byYear.'2015'
+    .inTermsOf.GDP
+    .sortValues(reverse=true).skip(1).take(5).shuffle()
+
+youguess.bars(data)
+  .setTitle("Expenditure in % of GDP (2015)")
+  .setAxisY(label="", labelOffset=110, labelMinimalSize=500)
+</script>
+
+<script type="text/thegamma" id="greenGovernment-code">let environmentProtection =
+  expenditure.byService.'Environment protection'.inTermsOf.Adjusted
+    .map(fun v -> v * 1000)
+
+youguess.line(environmentProtection)
+  .setColors("#1f77b4", unknown="#ff7f0e")
+  .setClip(2010, known=2010)
+  .setAxisX(label="Years")
+  .setAxisY(minValue=0,maxValue=18000,label="Real Terms (£ million)", labelMinimalSize=500)
+  .setTitle("Expenditure on environment protection")
+</script>
+
+<script type="text/thegamma" id="scienceAndTech-code">let scienceCapital =
+  expenditure.byService.'Economic affairs'.ofWhichComponentIs.'Science and technology'.byAccount.Capital
+
+youguess.line(scienceCapital)
+  .setColors("#9467bd", unknown="#bcbd22")
+  .setClip(2012)
+  .setRange(0, 5000)
+  .setAxisX(label="Years")
+  .setAxisY(label="Capital Investment (£ million)", labelMinimalSize=500)
+  .setTitle("Expenditure on science and technology")
+</script>
+
+<script type="text/thegamma" id="education-code">let topThreeSpendings =
+  expenditure.byYear.'2015'.byService.Education.sortValues(reverse=true).take(3)
+compost.charts.bar(topThreeSpendings)
+  .setAxisY(label="Education sub-services")
+  .setAxisX(label="£ million")
+  .setTitle("Education (2015)")
+  .setStyle(inlineLabels=true)
+  .setEmptyMessage("Data for the specified year and government service is not avialble. Please select another service or year!")
+</script>
+
+<script type="text/thegamma" id="transport-code">let sci =
+    expenditure
+        .byService.'Economic affairs'
+        .ofWhichComponentIs.'Science and technology'
+        .byAccount.Capital
+        .setProperties(seriesName="Science and technology")
+let transport =
+    expenditure
+        .byService.'Economic affairs'
+        .ofWhichComponentIs.Transport
+        .byAccount.Capital
+        .setProperties(seriesName="Transport")
+let ent =
+    expenditure
+        .byService.'Economic affairs'
+        .ofWhichComponentIs.'Enterprise and economic development'
+        .byAccount.Capital
+        .setProperties(seriesName="Enterprise and economic development")
+let total =
+    expenditure
+        .byService.'Economic affairs'
+        .byAccount.Capital
+        .setProperties(seriesName="Economic affairs total")
+let agri =
+    expenditure
+        .byService.'Economic affairs'
+        .ofWhichComponentIs.'Agriculture, fisheries and forestry'
+        .byAccount.Capital
+        .setProperties(seriesName="Agriculture, fisheries and forestry")
+
+compost.charts.lines([total,transport,sci,ent,agri])
+    .setAxisX(2011,2015,label="Year")
+    .setAxisY(label="£ million")
+    .setLegend("auto")
+    .setTitle("Expenditure on economic affairs")
+    .setSize(height=400)
+    .setEmptyMessage("Data for the specified year and government service is not avialble. Please select another service or year!")    
+</script>
+
+<script type="text/thegamma" id="socialProtection-code">let Top4SpendsForSocialProtection =
+  expenditure
+    .byYear.'2015'
+    .byService.'Social protection'
+    .sortValues(reverse=true).take(5)
+
+compost.charts.bar(Top4SpendsForSocialProtection)
+    .setAxisX(label="£ million")
+    .setAxisY(label="Social protection subservices")
+    .setTitle("Social protection (2015)")
+    .setStyle(inlineLabels=true)
+    .setEmptyMessage("Data for the specified year and government service is not avialble. Please select another service or year!")
+</script>
+
+<!-- Define visualizations that should be loaded by embed.js later -->
+<script type="text/javascript">
+var thegamma =
+  [ {id:"grossDomesticProduct"}, {id:"greenGovernment"},
+  {id:"scienceAndTech"},{id:"education"},{id:"transport"},
+  {id:"socialProtection"},
+  {id:"listing",editors:"listing-options"} ];
+</script>
+
+<div class="thegamma">
+<div id="thegamma-sizer" class="thegamma-sizer"></div>
+<div id="thegamma-dialog" class="thegamma-dialog">
+  <div id="thegamma-dialog-window" class="thegamma-dialog-window">
+    <div class="header"><a href="javascript:closeDialog();">&times;</a><span>Edit source code</span></div>
+    <div class="body"><div id="thegamma-ed"></div><div id="thegamma-errors" class="errors"></div>
+      <button id="thegamma-update">Update page</button></div>
+  </div>
+</div>
+</div>
+
+<script type="text/javascript" src="https://thegamma.net/lib/thegamma-0.1/babel.min.js"></script>
+<script type="text/javascript" src="https://thegamma.net/lib/thegamma-0.1/core-js.min.js"></script>
+<script type="text/javascript" src="https://thegamma.net/lib/thegamma-0.1/require.js"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript" src="/lib/embed.js"></script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-65311433-2', 'auto');
+  ga('send', 'pageview');
+</script>
+</body>
+</html>
